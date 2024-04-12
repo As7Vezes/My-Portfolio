@@ -15,7 +15,14 @@ const StyledHero = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   height: "100vh",
   display: "flex",
-  alignItems: "center"
+  alignItems: "center",
+  [theme.breakpoints.up('xs')]: { // <= mobile
+    paddingTop: "200px",
+
+  },
+  [theme.breakpoints.up('md')]: { // >=mobile
+    paddingTop: "0",
+  }
 }));
 
 const StyledImg = styled("img")(({ theme }) => ({
@@ -83,7 +90,7 @@ const Hero = () => {
               <Typography color="primary.contrastText" variant="h2" textAlign="center">
                 I'm a Full-Stack Developer
               </Typography>
-              <Grid container display="flex" justifyContent="center" pt={3} spacing={3}>
+              <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
                   <StyledButton>
                     <DownloadIcon />
