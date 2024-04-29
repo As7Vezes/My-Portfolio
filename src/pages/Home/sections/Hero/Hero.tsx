@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Button, Container, Grid, Typography, styled } from "@mui/material";
 import Popover from "@mui/material/Popover";
 import DownloadIcon from '@mui/icons-material/Download';
-import EmailIcon from '@mui/icons-material/Email';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import Avatar from "../../../../assets/images/fotoPerfil.jpg";
 import GithubIcon from "../../../../assets/icons/github.png";
 import LinkedinIcon from "../../../../assets/icons/linkedin.png";
@@ -130,7 +130,7 @@ const Hero = () => {
                       gap: "10px",
                     }}
                   >
-                    <EmailIcon />
+                    <MailOutlineIcon />
                     <Typography>
                       Contact me
                     </Typography>
