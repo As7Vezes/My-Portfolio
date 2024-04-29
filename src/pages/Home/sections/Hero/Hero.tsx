@@ -1,6 +1,8 @@
 import React from "react";
-import { Box, Button, Container, Grid, Typography, styled } from "@mui/material";
+import { Box, Container, Grid, Typography, styled } from "@mui/material";
 import Popover from "@mui/material/Popover";
+import { FaFileDownload } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
 import Avatar from "../../../../assets/images/fotoPerfil.jpg";
 import GithubIcon from "../../../../assets/icons/github.png";
 import LinkedinIcon from "../../../../assets/icons/linkedin.png";
@@ -8,6 +10,7 @@ import WhatsappIcon from "../../../../assets/icons/whatsapp.png";
 import GmailIcon from "../../../../assets/icons/gmail.png";
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../components/AnimetedBackground/AnimetedBackgound";
+import StyledButtonContacts from "../../../../components/StyledButton/StyledButtonContacts";
 
 const StyledHero = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
@@ -50,23 +53,13 @@ const StyledIcon = styled("img")(() => ({
   margin: "0.5rem",
 }));
 
-const downloadFile = () => {
-  const fileUrl = "https://drive.google.com/file/d/1YcHgGkbwhhYkNGyanHVL4JCUdZPOKlKP/view?usp=drive_link";
 
-  const link = document.createElement("a");
-  link.href = fileUrl;
-  link.download = "currículo.pdf"; 
-  link.target = "_blank";
-  
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
 
 const Hero = () => {
+
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
     null
-);
+  );
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -103,34 +96,22 @@ const Hero = () => {
               </Typography>
               <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                  <StyledButton onClick={downloadFile}>
+                  <StyledButton>
+                    <FaFileDownload />
                     <Typography>
                       Dowload CV
                     </Typography>
                   </StyledButton>
                 </Grid>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                  <Button
-                    aria-describedby={id}
-                    variant="contained"
-                    onClick={handleClick}
-                    sx={{
-                      backgroundColor: "blue",
-                      color: "white",
-                      padding: "10px 20px",
-                      borderRadius: "5px",
-                      "&:hover": {
-                        backgroundColor: "darkblue",
-                      },
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "10px",
-                    }}
-                  >
+                  <StyledButtonContacts onClick={handleClick} open={false} anchorEl={null} onClose={function (): void {
+                    throw new Error("Function not implemented.");
+                  } }>
+                    <MdOutlineEmail />
                     <Typography>
                       Contact me
                     </Typography>
-                  </Button>
+                  </StyledButtonContacts>
                 </Grid>
               </Grid>
 
