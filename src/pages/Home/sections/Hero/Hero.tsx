@@ -1,8 +1,6 @@
 import React from "react";
 import { Box, Button, Container, Grid, Typography, styled } from "@mui/material";
 import Popover from "@mui/material/Popover";
-import DownloadIcon from '@mui/icons-material/DownloadOutlined';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import Avatar from "../../../../assets/images/fotoPerfil.jpg";
 import GithubIcon from "../../../../assets/icons/github.png";
 import LinkedinIcon from "../../../../assets/icons/linkedin.png";
@@ -106,7 +104,6 @@ const Hero = () => {
               <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
                   <StyledButton onClick={downloadFile}>
-                    <DownloadIcon />
                     <Typography>
                       Dowload CV
                     </Typography>
@@ -130,7 +127,6 @@ const Hero = () => {
                       gap: "10px",
                     }}
                   >
-                    <MailOutlineIcon />
                     <Typography>
                       Contact me
                     </Typography>
