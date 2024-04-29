@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Container, Grid, Typography, styled } from "@mui/material";
 import Popover from "@mui/material/Popover";
-import DownloadIcon from '@mui/icons-material/Download';
+import DownloadIcon from '@mui/icons-material/DownloadOutlined';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import Avatar from "../../../../assets/images/fotoPerfil.jpg";
 import GithubIcon from "../../../../assets/icons/github.png";
