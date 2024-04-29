@@ -52,10 +52,23 @@ const StyledIcon = styled("img")(() => ({
   margin: "0.5rem",
 }));
 
+const downloadFile = () => {
+  const fileUrl = "https://drive.google.com/file/d/1YcHgGkbwhhYkNGyanHVL4JCUdZPOKlKP/view?usp=drive_link";
+
+  const link = document.createElement("a");
+  link.href = fileUrl;
+  link.download = "currículo.pdf"; 
+  link.target = "_blank";
+  
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 const Hero = () => {
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
     null
-  );
+);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -92,7 +105,7 @@ const Hero = () => {
               </Typography>
               <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                  <StyledButton>
+                  <StyledButton onClick={downloadFile}>
                     <DownloadIcon />
                     <Typography>
                       Dowload CV

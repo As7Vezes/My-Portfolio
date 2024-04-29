@@ -3,12 +3,10 @@ import { ReactNode } from "react"
 
 interface StyledButtonProps {
     children: ReactNode,
-    variant?: "text" | "outlined" | "contained";
-    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-    "aria-describedby"?: string;
+    onClick: () => void
 }
 
-const StyledButton: React.FC<StyledButtonProps> = ({ children }) => {
+const StyledButton: React.FC<StyledButtonProps> = ({ children, onClick }) => {
 
     const StyledButton = styled("button")(({ theme }) => ({
         backgroundColor: "transparent",
@@ -23,11 +21,13 @@ const StyledButton: React.FC<StyledButtonProps> = ({ children }) => {
         color: theme.palette.primary.contrastText,
         '&:hover': {
             backgroundColor: theme.palette.secondary.light
-        }
+        },
+        cursor: "pointer"
+
     }))
 
     return (
-        <StyledButton>
+        <StyledButton onClick={onClick}>
             {children}
         </StyledButton>
     )
