@@ -23,8 +23,8 @@ const StyledButton: React.FC<StyledButtonProps> = ({ children }) => {
     const StyledButton = styled("button")(({ theme }) => ({
         backgroundColor: "transparent",
         border: "none",
-        borderRadius: "3px",
-        padding: "5px 15px",
+        borderRadius: '5px',
+        padding: '10px 20px',
         width: "100%",
         display: "inline-flex",
         alignItems: "center",

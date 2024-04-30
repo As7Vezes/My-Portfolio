@@ -11,6 +11,7 @@ import GmailIcon from "../../../../assets/icons/gmail.png";
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../components/AnimetedBackground/AnimetedBackgound";
 import StyledButtonContacts from "../../../../components/StyledButton/StyledButtonContacts";
+import AnimatedText from "../../../../components/AnimetedText/AnimatedText";
 
 const StyledHero = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
@@ -91,9 +92,7 @@ const Hero = () => {
               <Typography color="primary.contrastText" variant="h1" textAlign="center" pb={2}>
                 Denys Natanael
               </Typography>
-              <Typography color="primary.contrastText" variant="h2" textAlign="center">
-                I'm a Full-Stack Developer
-              </Typography>
+              <AnimatedText text="I'm a Full Stack Developer!"></AnimatedText>
               <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
                   <StyledButton>
