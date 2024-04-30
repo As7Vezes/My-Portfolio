@@ -19,7 +19,7 @@ const StyledHero = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   [theme.breakpoints.up('xs')]: { // <= mobile
-    paddingTop: "200px",
+    paddingTop: "150px",
 
   },
   [theme.breakpoints.up('md')]: { // >=mobile
