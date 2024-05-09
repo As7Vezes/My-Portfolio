@@ -1,4 +1,4 @@
-import { Container, Grid, styled, useMediaQuery } from "@mui/material";
+import { Container, Grid, styled } from "@mui/material";
 import { PiCertificateBold } from "react-icons/pi";
 import { motion } from "framer-motion";
 
