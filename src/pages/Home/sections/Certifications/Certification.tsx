@@ -35,8 +35,8 @@ export const Certification = () => {
                 <Container maxWidth="lg">
                     <Grid container xs={12} sx={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "50px" }}>
                         <motion.div
-                            initial={{ opacity: 0, y: -95 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: -100 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: 0.25 }}
                         >
                             <Grid item xs={12} sx={{ border: "solid 5px black", padding: "15px", borderRadius: "5px"}}>
@@ -50,8 +50,8 @@ export const Certification = () => {
                             </Grid>
                         </motion.div>
                         <motion.div
-                            initial={{ opacity: 0, y: -95 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: 100 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: 0.25 }}
                         >
                             <Grid item xs={12} sx={{ border: "solid 5px black", padding: "15px", borderRadius: "5px"}}>
