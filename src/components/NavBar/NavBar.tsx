@@ -1,23 +1,77 @@
-import { AppBar, MenuItem, Toolbar, styled } from "@mui/material";
+import { AppBar, IconButton, MenuItem, Menu, Toolbar, styled } from "@mui/material";
+import { Link as ScrollLink } from "react-scroll";
+import MenuIcon from "@mui/icons-material/Menu";
+import React, { useState } from "react";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const NavBar = () => {
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
 
-    const StyledToobar = styled(Toolbar)(() => ({
+    const handleMenuClick = (event: React.MouseEvent<HTMLElement>) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleMenuClose = () => {
+        setAnchorEl(null);
+    };
+
+    const isMobile = useMediaQuery('(max-width:600px)'); 
+
+    const StyledToolbar = styled(Toolbar)(() => ({
         display: "flex",
-        justifyContent: "space-evenly"
-      }));
+        justifyContent: isMobile ? "space-between" : "space-evenly", 
+    }));
 
     return (
         <>
             <AppBar position="absolute">
-                <StyledToobar>
-                    <MenuItem>About</MenuItem>
-                    <MenuItem>Skills</MenuItem>
-                    <MenuItem>Projects</MenuItem>
-                </StyledToobar>
+                <StyledToolbar>
+                    {!isMobile && (
+                        <>
+                            <ScrollLink to="about" smooth={true} duration={500}>
+                                <MenuItem>About</MenuItem>
+                            </ScrollLink>
+                            <ScrollLink to="skills" smooth={true} duration={500}>
+                                <MenuItem>Skills</MenuItem>
+                            </ScrollLink>
+                            <ScrollLink to="projects" smooth={true} duration={500}>
+                                <MenuItem>Projects</MenuItem>
+                            </ScrollLink>
+                        </>
+                    )}
+                    {isMobile && (
+                        <>
+                            <IconButton
+                                edge="start"
+                                color="inherit"
+                                aria-label="menu"
+                                onClick={handleMenuClick}
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                            <Menu
+                                id="menu-appbar"
+                                anchorEl={anchorEl}
+                                open={open}
+                                onClose={handleMenuClose}
+                            >
+                                <ScrollLink to="about" smooth={true} duration={500}>
+                                    <MenuItem onClick={handleMenuClose}>About</MenuItem>
+                                </ScrollLink>
+                                <ScrollLink to="skills" smooth={true} duration={500}>
+                                    <MenuItem onClick={handleMenuClose}>Skills</MenuItem>
+                                </ScrollLink>
+                                <ScrollLink to="projects" smooth={true} duration={500}>
+                                    <MenuItem onClick={handleMenuClose}>Projects</MenuItem>
+                                </ScrollLink>
+                            </Menu>
+                        </>
+                    )}
+                </StyledToolbar>
             </AppBar>
         </>
-    )
-}
+    );
+};
 
 export default NavBar;

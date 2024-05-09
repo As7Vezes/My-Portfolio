@@ -12,15 +12,17 @@ import StyledButton from "../../../../components/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../components/AnimetedBackground/AnimetedBackgound";
 import StyledButtonContacts from "../../../../components/StyledButton/StyledButtonContacts";
 import AnimatedText from "../../../../components/AnimetedText/AnimatedText";
+import { motion } from "framer-motion"
 
 const StyledHero = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   height: "100vh",
   display: "flex",
   alignItems: "center",
+  justifyContent: "center",
+  marginBottom: "30px",
   [theme.breakpoints.up('xs')]: { // <= mobile
     paddingTop: "150px",
-
   },
   [theme.breakpoints.up('md')]: { // >=mobile
     paddingTop: "0",
@@ -76,77 +78,85 @@ const Hero = () => {
   return (
     <>
       <StyledHero>
-        <Container maxWidth="lg">
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={5} textAlign="center">
-              <Box position="relative">
-                <Box position="absolute" width={"100%"} top={-100} right={0}>
-                  <AnimatedBackground />
+        <motion.div 
+           
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{opacity: 1, x: 0}}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          exit={{ opacity: 0, x: -100 }}
+        >
+          <Container maxWidth="lg">
+            <Grid container spacing={2}>
+              <Grid item xs={12} md={5} textAlign="center">
+                <Box position="relative">
+                  <Box position="absolute" width={"100%"} top={-100} right={0}>
+                    <AnimatedBackground />
+                  </Box>
+                  <Box position="relative" textAlign="center">
+                    <StyledImg src={Avatar} alt="" />
+                  </Box>
                 </Box>
-                <Box position="relative" textAlign="center">
-                  <StyledImg src={Avatar} alt="" />
-                </Box>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={7}>
-              <Typography color="primary.contrastText" variant="h1" textAlign="center" pb={2}>
-                Denys Natanael
-              </Typography>
-              <AnimatedText text="I'm a Full Stack Developer!"></AnimatedText>
-              <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
-                <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                  <StyledButton>
-                    <FaFileDownload />
-                    <Typography>
-                      Dowload CV
-                    </Typography>
-                  </StyledButton>
-                </Grid>
-                <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                  <StyledButtonContacts onClick={handleClick} open={false} anchorEl={null} onClose={function (): void {
-                    throw new Error("Function not implemented.");
-                  } }>
-                    <MdOutlineEmail />
-                    <Typography>
-                      Contact me
-                    </Typography>
-                  </StyledButtonContacts>
-                </Grid>
               </Grid>
-
-              <Popover
-                id={id}
-                open={open}
-                anchorEl={anchorEl}
-                onClose={handleClose}
-                anchorReference="anchorPosition"
-                anchorPosition={{
-                  top: anchorEl ? anchorEl.getBoundingClientRect().bottom : 0,
-                  left: anchorEl ? anchorEl.getBoundingClientRect().left : 0,
-                }}
-              >
-                <Typography sx={{ p: 2, background: "black", display: "flex", justifyContent: "center" }}>
-                  <UlStyled>
-                    <ListIcons>
-                      <a href="https://github.com/As7Vezes" target="_blank">
-                        <StyledIcon src={GithubIcon} alt="GitHub" />
-                      </a>
-                      <a href="https://www.linkedin.com/in/denys-natanael-165a8920b" target="_blank">
-                        <StyledIcon src={LinkedinIcon} alt="Linkedin" />
-                      </a>
-                      <a href="https://wa.me/5513997989779" target="_blank">
-                        <StyledIcon src={WhatsappIcon} alt="WhatsApp" />
-                      </a>
-                      <a href="https://mailto:denysn60@gmail.com" target="_blank">
-                        <StyledIcon src={GmailIcon} alt="Gmail" />
-                      </a>
-                    </ListIcons>
-                  </UlStyled>
+              <Grid item xs={12} md={7}>
+                <Typography color="primary.contrastText" variant="h1" textAlign="center" pb={2}>
+                  Denys Natanael
                 </Typography>
-              </Popover>
+                <AnimatedText text="I'm a Full Stack Developer!"></AnimatedText>
+                <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
+                  <Grid item xs={12} md={4} display="flex" justifyContent="center">
+                    <StyledButton>
+                      <FaFileDownload />
+                      <Typography>
+                        Dowload CV
+                      </Typography>
+                    </StyledButton>
+                  </Grid>
+                  <Grid item xs={12} md={4} display="flex" justifyContent="center">
+                    <StyledButtonContacts onClick={handleClick} open={false} anchorEl={null} onClose={function (): void {
+                      throw new Error("Function not implemented.");
+                    }}>
+                      <MdOutlineEmail />
+                      <Typography>
+                        Contact me
+                      </Typography>
+                    </StyledButtonContacts>
+                  </Grid>
+                </Grid>
+
+                <Popover
+                  id={id}
+                  open={open}
+                  anchorEl={anchorEl}
+                  onClose={handleClose}
+                  anchorReference="anchorPosition"
+                  anchorPosition={{
+                    top: anchorEl ? anchorEl.getBoundingClientRect().bottom : 0,
+                    left: anchorEl ? anchorEl.getBoundingClientRect().left : 0,
+                  }}
+                >
+                  <Typography sx={{ p: 2, background: "black", display: "flex", justifyContent: "center" }}>
+                    <UlStyled>
+                      <ListIcons>
+                        <a href="https://github.com/As7Vezes" target="_blank">
+                          <StyledIcon src={GithubIcon} alt="GitHub" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/denys-natanael-165a8920b" target="_blank">
+                          <StyledIcon src={LinkedinIcon} alt="Linkedin" />
+                        </a>
+                        <a href="https://wa.me/5513997989779" target="_blank">
+                          <StyledIcon src={WhatsappIcon} alt="WhatsApp" />
+                        </a>
+                        <a href="https://mailto:denysn60@gmail.com" target="_blank">
+                          <StyledIcon src={GmailIcon} alt="Gmail" />
+                        </a>
+                      </ListIcons>
+                    </UlStyled>
+                  </Typography>
+                </Popover>
+              </Grid>
             </Grid>
-          </Grid>
-        </Container>
+          </Container>
+        </motion.div>
       </StyledHero>
     </>
   );
