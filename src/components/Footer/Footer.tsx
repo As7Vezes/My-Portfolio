@@ -1,7 +1,7 @@
 import { FC, ReactElement } from "react";
 import { Container, Grid, Typography, styled } from "@mui/material";
 
-const StyledFooter = styled("div")(({ theme }) => ({
+const StyledFooter = styled("div")(() => ({
     width: "100%",
     height: "auto",
     backgroundColor: "secondary.main",
@@ -11,9 +11,6 @@ const StyledFooter = styled("div")(({ theme }) => ({
 }))
 
 export const Footer: FC = (): ReactElement => {
-
-    // const smallScreen = useMediaQuery('(max-width: 600px)');
-
     return (
         <StyledFooter>
             <Container maxWidth="lg">
