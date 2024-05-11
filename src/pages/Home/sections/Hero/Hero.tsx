@@ -56,8 +56,6 @@ const StyledIcon = styled("img")(() => ({
   margin: "0.5rem",
 }));
 
-
-
 const Hero = () => {
 
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(

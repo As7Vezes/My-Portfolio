@@ -2,7 +2,7 @@ import { styled } from "@mui/material"
 import { ReactNode } from "react"
 
 const downloadFile = () => {
-    const fileUrl = "https://drive.google.com/file/d/1YcHgGkbwhhYkNGyanHVL4JCUdZPOKlKP/view?usp=drive_link";
+    const fileUrl = "https://drive.google.com/file/d/158CP5KWh3-9wwM8XRwcLLlGIIAhJ_UVH/view?usp=drive_link";
   
     const link = document.createElement("a");
     link.href = fileUrl;

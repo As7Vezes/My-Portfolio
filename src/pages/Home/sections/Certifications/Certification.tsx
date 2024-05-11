@@ -3,7 +3,7 @@ import { PiCertificateBold } from "react-icons/pi";
 import { motion } from "framer-motion"
 
 const StyledCertification = styled("div")(() => ({
-    paddingTop: "30px",
+    paddingTop: "40px",
     display: "flex",
     justifyContent: "center"
 }))
@@ -12,7 +12,8 @@ const StyledIcon = styled("i")(({ theme }) => ({
     fontSize: "4rem",
     marginBottom: theme.spacing(1),
     minWidth: "100px",
-    textAlign: "center"
+    display: "flex",
+    justifyContent: "center"
 }));
 
 const StyledTextCertificate = styled("div")(() => ({
