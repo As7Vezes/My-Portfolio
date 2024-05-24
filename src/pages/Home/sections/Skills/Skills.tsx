@@ -48,7 +48,7 @@ export const Skills = () => {
                     <Container maxWidth="xl">
                         <Grid>
                             <Typography sx={{ display: "flex", alignItems: "center", justifyContent: "center" }} variant="h2">
-                                Skills
+                                Habilidades
                             </Typography>
                         </Grid>
                         <Grid container columns={12} sx={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "50px", marginTop: "50px" }}>

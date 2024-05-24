@@ -120,7 +120,7 @@ export const Projects = () => (
             }}
             variant="h2"
           >
-            Projects
+            Projetos
           </Typography>
         </Grid>
         {[
@@ -130,21 +130,7 @@ export const Projects = () => (
             tecnologys: [<FaJava />, <SiSpring />, <SiSpringsecurity />], 
             linkDeploy: "#",
             linkGitHub: "https://github.com/As7Vezes/authentication-api-java"
-          },
-          {
-            img: AuthenticationAPI,
-            description: "Authentication API Project",
-            tecnologys: ["icon1", "icon2", "icon3"],
-            linkDeploy: "#",
-            linkGitHub: "https://github.com/As7Vezes/authentication-api-java"
-          },
-          {
-            img: AuthenticationAPI,
-            description: "Authentication API Project",
-            tecnologys: ["icon1", "icon2", "icon3"],
-            linkDeploy: "#",
-            linkGitHub: "https://github.com/As7Vezes/authentication-api-java"
-          },
+          }
         ].map((project, index) => (
           <Grid item key={index}>
             <ProjectCard

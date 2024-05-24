@@ -29,7 +29,7 @@ export const About = () => {
                     <Container maxWidth="lg">
                         <Grid>
                             <Typography sx={{ display: "flex", alignItems: "center", justifyContent: "center" }} variant="h2">
-                                About me
+                                Sobre mim
                             </Typography>
                         </Grid>
                         <Grid>

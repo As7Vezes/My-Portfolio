@@ -30,13 +30,13 @@ const NavBar = () => {
                     {!isMobile && (
                         <>
                             <ScrollLink to="about" smooth={true} duration={500}>
-                                <MenuItem>About</MenuItem>
+                                <MenuItem>Sobre mim</MenuItem>
                             </ScrollLink>
                             <ScrollLink to="skills" smooth={true} duration={500}>
-                                <MenuItem>Skills</MenuItem>
+                                <MenuItem>Habilidades</MenuItem>
                             </ScrollLink>
                             <ScrollLink to="projects" smooth={true} duration={500}>
-                                <MenuItem>Projects</MenuItem>
+                                <MenuItem>Projetos</MenuItem>
                             </ScrollLink>
                         </>
                     )}
