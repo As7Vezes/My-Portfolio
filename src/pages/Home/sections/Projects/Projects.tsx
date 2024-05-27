@@ -1,9 +1,14 @@
 import { Grid, Typography, styled, useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
 import AuthenticationAPI from "../../../../assets/images/imgProjects/AuthenticationAPI.png";
+import WeatherAPI from "../../../../assets/images/imgProjects/Weather-api.png";
 import { FaJava } from "react-icons/fa";
 import { SiSpring } from "react-icons/si";
 import { SiSpringsecurity } from "react-icons/si";
+import { SiJquery } from "react-icons/si";
+import { FaHtml5 } from "react-icons/fa";
+import { FaCss3Alt } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io5";
 
 interface ProjectCardProps {
   img: string;
@@ -22,6 +27,7 @@ const StyledProjects = styled("div")(({ theme }) => ({
 
 const StyledContainerProjects = styled("div")(({ smallScreen }: { smallScreen: boolean }) => ({
   width: smallScreen ? "300px" : "450px", 
+  height: smallScreen ? "auto" : "350px",
   border: "4px solid white",
   borderRadius: "5px",
   display: "flex",
@@ -95,7 +101,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ img, description, tecnologys,
         ))}
       </StyledTecnologyprojects>
       <StyledContainerLikeLiks>
-        <StyledLikeLiks href={linkDeploy}>Deploy</StyledLikeLiks>
+        {linkDeploy && (
+          <StyledLikeLiks href={linkDeploy} target="_blank">Deploy</StyledLikeLiks>
+        )}
         <StyledLikeLiks href={linkGitHub} target="_blank">GitHub</StyledLikeLiks>
       </StyledContainerLikeLiks>
     </StyledContainerProjects>
@@ -126,10 +134,17 @@ export const Projects = () => (
         {[
           {
             img: AuthenticationAPI,
-            description: "Authentication API Project #Back end",
+            description: "Authentication API Project #Back-end",
             tecnologys: [<FaJava />, <SiSpring />, <SiSpringsecurity />], 
-            linkDeploy: "#",
+            linkDeploy: false,
             linkGitHub: "https://github.com/As7Vezes/authentication-api-java"
+          },
+          {
+            img: WeatherAPI,
+            description: "Weather API #Front-End",
+            tecnologys: [<SiJquery />, <FaHtml5 />, <FaCss3Alt />, <IoLogoJavascript />], 
+            linkDeploy: "https://as7vezes.github.io/Weather-api/",
+            linkGitHub: "https://github.com/As7Vezes/Weather-api"
           }
         ].map((project, index) => (
           <Grid item key={index}>
