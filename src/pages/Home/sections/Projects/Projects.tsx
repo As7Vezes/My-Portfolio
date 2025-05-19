@@ -2,6 +2,7 @@ import { Grid, Typography, styled, useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
 import AuthenticationAPI from "../../../../assets/images/imgProjects/AuthenticationAPI.png";
 import WeatherAPI from "../../../../assets/images/imgProjects/Weather-api.png";
+import MemorizationHack from "../../../../assets/images/imgProjects/MemorizationHack.png";
 import { FaJava } from "react-icons/fa";
 import { SiSpring } from "react-icons/si";
 import { SiSpringsecurity } from "react-icons/si";
@@ -9,6 +10,9 @@ import { SiJquery } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
+import { TbBrandNextjs } from "react-icons/tb";
+import { SiDotnet } from "react-icons/si";
+import { VscAzure } from "react-icons/vsc";
 
 interface ProjectCardProps {
   img: string;
@@ -145,6 +149,13 @@ export const Projects = () => (
             tecnologys: [<SiJquery />, <FaHtml5 />, <FaCss3Alt />, <IoLogoJavascript />], 
             linkDeploy: "https://as7vezes.github.io/Weather-api/",
             linkGitHub: "https://github.com/As7Vezes/Weather-api"
+          },
+          {
+            img: MemorizationHack,
+            description: "Memorization Hack #Full-Stack",
+            tecnologys: [<TbBrandNextjs />, , <SiDotnet />, <VscAzure />], 
+            linkDeploy: undefined,
+            linkGitHub: "https://github.com/As7Vezes/Memorization-Hack-BackEnd"
           }
         ].map((project, index) => (
           <Grid item key={index}>

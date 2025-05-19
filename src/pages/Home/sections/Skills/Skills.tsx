@@ -9,6 +9,9 @@ import { SiSpring } from "react-icons/si";
 import { FaDocker } from "react-icons/fa";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { FaGithubSquare } from "react-icons/fa";
+import { DiNetmagazine } from "react-icons/di";
+import { VscAzure } from "react-icons/vsc";
+import { TbBrandCSharp } from "react-icons/tb";
 
 const StyledSkills = styled("div")(() => ({
     backgroundColor: "#fff",
@@ -121,6 +124,30 @@ export const Skills = () => {
                                     <FaGithubSquare />
                                     <StyleNameTecnology>
                                         GitHub
+                                    </StyleNameTecnology>
+                                </StyledIcon>
+                            </Grid>
+                            <Grid item xs={3}>
+                                <StyledIcon>
+                                    <TbBrandCSharp />
+                                    <StyleNameTecnology>
+                                        C# 
+                                    </StyleNameTecnology>
+                                </StyledIcon>
+                            </Grid>
+                            <Grid item xs={3}>
+                                <StyledIcon>
+                                    <DiNetmagazine /> 
+                                    <StyleNameTecnology>
+                                        .NET    
+                                    </StyleNameTecnology>
+                                </StyledIcon>
+                            </Grid>
+                            <Grid item xs={3}>
+                                <StyledIcon>
+                                    <VscAzure />
+                                    <StyleNameTecnology>
+                                        AZURE    
                                     </StyleNameTecnology>
                                 </StyledIcon>
                             </Grid>
